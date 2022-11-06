@@ -5,7 +5,6 @@ import Home from "./Page/Home/Home";
 import Layout from "./Page/Layout/Layout";
 import { useAppSelector } from "./Redux/Hooks";
 import RequireAuth from "./Service/RequireAuth";
-import "./Style/App.scss";
 
 function App() {
   const token = useAppSelector((state) => state.data.token);
