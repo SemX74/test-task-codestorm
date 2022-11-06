@@ -1,0 +1,49 @@
+@use "../../Style/_colors.scss";
+@keyframes home {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.home {
+  border-radius: 10px;
+  width: 40%;
+  height: 50%;
+  background: colors.$controlsBg;
+  padding: 2em;
+  animation: home ease-in-out 1s;
+}
+.home__title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 24px;
+  color: #ffffff;
+  span {
+    cursor: pointer;
+    color: colors.$error;
+    text-decoration: underline;
+  }
+}
+.home__task-wrapper {
+  padding: 3em 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.home__task {
+  list-style: none;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  color: #ffffff;
+}

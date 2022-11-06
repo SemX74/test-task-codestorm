@@ -1,0 +1,17 @@
+@use "../../Style/_colors.scss";
+.layout {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$background;
+  position: relative;
+}
+.layout__bg-waves {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

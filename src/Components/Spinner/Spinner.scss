@@ -1,0 +1,26 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+.spinner {
+  width: auto;
+  height: 60%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: transparent;
+  border: 5px solid white;
+  border-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.635);
+  animation: 1s spin ease-in-out infinite;
+}
+.spinner__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

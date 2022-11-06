@@ -1,0 +1,31 @@
+@keyframes message {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.message {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  padding: 1em;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  background: gray;
+  animation: message ease-in-out 0.5s;
+  cursor: pointer;
+  &__good {
+    background: rgba(117, 255, 117, 0.639);
+    color: green;
+  }
+  &__bad {
+    background: rgba(255, 159, 159, 0.87);
+    color: rgb(128, 0, 0);
+  }
+  &__warning {
+    background: rgba(255, 255, 117, 0.639);
+    color: rgb(126, 128, 0);
+  }
+}

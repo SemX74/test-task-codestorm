@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import Auth from "./Page/Auth/Auth";
+import Home from "./Page/Home/Home";
+import Layout from "./Page/Layout/Layout";
+import { useAppSelector } from "./Redux/Hooks";
+import RequireAuth from "./Service/RequireAuth";
+import "./Style/App.scss";
 
 function App() {
+  const token = useAppSelector((state) => state.data.token);
+  const navigate = useNavigate();
+  useEffect(() => {
+    token && navigate("/");
+  }, [token]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <RequireAuth>
+                <Home />
+              </RequireAuth>
+            }
+          />
+          <Route path="login" element={<Auth />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
